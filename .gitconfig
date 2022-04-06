@@ -1,0 +1,41 @@
+[color]
+  ui = true
+[core]
+  editor = code --wait
+  excludesfile = ~/.gitignore
+	quotepath = false
+[user]
+  name = Leon Dewey
+  email = leon@leondewey.com
+[alias]
+	co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+  undo-commit = reset --soft HEAD^
+  unadd = reset HEAD --
+  unstage = reset HEAD --
+  add-commit = !git add -A && git commit
+  skywalker = push -f
+  amend = commit --amend
+  g = status
+  github = push && noti pull-request -u leon
+  l = log --graph --color=always --format="%C(auto)%h%d %C(black)%C(bold)%cr" "$@"
+  fs = "!git branch --sort=-committerdate | sed -E 's/..(.*)/\\1/' | fzf | xargs git switch"
+  cowboy = "!git add -A && git commit --amend --no-edit && git push -f"
+
+[push]
+  default = current
+[help]
+  autocorrect = 1
+[filter "lfs"]
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+[pager]
+  diff = diff-so-fancy | less --tabs=1,5 -RFX
+  show = diff-so-fancy | less --tabs=1,5 -RFX
