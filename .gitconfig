@@ -25,8 +25,6 @@
   l = log --graph --color=always --format="%C(auto)%h%d %C(black)%C(bold)%cr" "$@"
   fs = "!git branch --sort=-committerdate | sed -E 's/..(.*)/\\1/' | fzf | xargs git switch"
   cowboy = "!git add -A && git commit --amend --no-edit && git push -f"
-[push]
-  default = current
 [help]
   autocorrect = 1
 [filter "lfs"]
