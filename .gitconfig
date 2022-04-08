@@ -6,6 +6,8 @@
 [user]
   name = Leon Dewey
   email = leon@leondewey.com
+[credential]
+  helper = /usr/bin/gp credential-helper
 [alias]
 	co = checkout
   ci = commit
@@ -23,6 +25,7 @@
   g = status
   github = push && noti pull-request -u leon
   l = log --graph --color=always --format="%C(auto)%h%d %C(black)%C(bold)%cr" "$@"
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   fs = "!git branch --sort=-committerdate | sed -E 's/..(.*)/\\1/' | fzf | xargs git switch"
   cowboy = "!git add -A && git commit --amend --no-edit && git push -f"
 [help]
