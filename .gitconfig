@@ -21,7 +21,7 @@
   unstage = reset HEAD --
   add-commit = !git add -A && git commit
   skywalker = push -f
-  amend = commit --amend
+  amend = commit --amend --no-edit
   g = status
   github = push && noti pull-request -u leon
   l = log --graph --color=always --format="%C(auto)%h%d %C(black)%C(bold)%cr" "$@"
