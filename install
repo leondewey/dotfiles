@@ -6,3 +6,5 @@ ln -s /home/gitpod/.dotfiles/.gitconfig /home/gitpod/.gitconfig
 
 rm -f /home/gitpod/.bash_aliases
 ln -s /home/gitpod/.dotfiles/.bash_aliases /home/gitpod/.bash_aliases
+
+cat /home/gitpod/.dotfiles/.bashrc >> ~/.bashrc
